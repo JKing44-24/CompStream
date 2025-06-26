@@ -1,0 +1,208 @@
+export interface Property {
+  id: string;
+  parid: string;
+  propertyaddress: string;
+  propertycity: string;
+  propertystate: string;
+  propertyzip: string;
+  munidesc: string;
+  schooldesc: string;
+  saledate: string;
+  saleprice: number;
+  lotarea: string;
+  finishedlivingarea: string;
+  fairmarkettotal: number;
+  yearblt: string;
+  bedrooms: string;
+  fullbaths: string;
+  changenoticeaddress1: string;
+  classdesc?: string;
+  usedesc?: string;
+  grantor?: string;
+  grantee?: string;
+}
+
+export interface SearchFilters {
+  salesDateFrom?: string;
+  salesDateTo?: string;
+  minPrice?: number;
+  maxPrice?: number;
+  grantor?: string;
+  grantee?: string;
+  municipalities?: string[];
+  schoolDistrict?: string;
+  propertyType?: string;
+  propertyTypes?: string[];
+  minAcreage?: number;
+  maxAcreage?: number;
+}
+
+export interface RealEstateRecord {
+  id: string;
+  salesDate: string;
+  salesPrice: number;
+  grantor: string;
+  grantee: string;
+  landSize: string;
+  buildingSize: string;
+  assessment: number;
+  propertyDescription: string;
+  mapNumber: string;
+  municipality: string;
+  schoolDistrict?: string;
+  createdAt: string;
+}
+
+export const PROPERTY_TYPES = [
+  '>10 ACRES VACANT',
+  'AIR RIGHTS',
+  'APART: 5-19 UNITS',
+  'APART:20-39 UNITS',
+  'APART:40+ UNITS',
+  'AUTO SALES & SERVICE',
+  'AUTO SERV STATION',
+  'BANK',
+  'BARS',
+  'BED & BREAKFAST',
+  'BIG BOX RETAIL',
+  'BOWLING ALLEYS/REC FACILITY',
+  'BUILDERS LOT',
+  'BULK TRANSFER TERMINAL',
+  'CAR WASH',
+  'CASINO',
+  'CEMETERY/MONUMENTS',
+  'CHARITABLE EXEMPTION/HOS/HOMES',
+  'CHURCHES, PUBLIC WORSHIP',
+  'COAL RIGHTS SEP. ROYALTY INTEREST',
+  'COAL RIGHTS, WORKING INTERESTS',
+  'COMM APRTM CONDOS 20-39 UNITS',
+  'COMM APRTM CONDOS 40+ UNITS',
+  'COMM APRTM CONDOS 5-19 UNITS',
+  'COMM AUX BUILDING',
+  'COMMERCIAL GARAGE',
+  'COMMERCIAL LAND',
+  'COMMERCIAL TRUCK TERMINAL',
+  'COMMERCIAL/UTILITY',
+  'COMMON AREA',
+  'COMMON AREA OR GREENBELT',
+  'COMMUNITY REINVESTMENT',
+  'COMMUNITY SHOPPING CENTER',
+  'COMMUNITY URBAN RENEWAL',
+  'CONDEMNED/BOARDED-UP',
+  'CONDO DEVELOPMENTAL LAND',
+  'CONDO GARAGE UNITS',
+  'CONDOMINIUM',
+  'CONDOMINIUM COMMON PROPERTY',
+  'CONDOMINIUM OFFICE BUILDING',
+  'CONDOMINIUM UNIT',
+  'CONVENIENCE STORE',
+  'CONVENIENCE STORE GAS/REPAIRS',
+  'CONVENIENCE STORE/GAS',
+  'COUNTRY CLUBS',
+  'COUNTY GOVERNMENT',
+  'DAYCARE/PRIVATE SCHOOL',
+  'DEPARTMENT STORE',
+  'DISCOUNT STORE',
+  'DISTRIBUTION WAREHOUSE',
+  'DRIVE IN REST OR FOOD SERVICE',
+  'DRY CLEANING PLANTS/LAUNDRIES',
+  'DWG APT CONVERSION',
+  'DWG USED AS OFFICE',
+  'DWG USED AS RETAIL',
+  'FAST FOOD/DRIVE THRU WINDOW',
+  'FEDERAL GOVERNMENT',
+  'FIRE DEPARTMENT/EMS',
+  'FOOD & DRINK PROCESSING',
+  'FOUR FAMILY',
+  'FUNERAL HOMES',
+  'GENERAL FARM',
+  'GREENHOUSES, VEG & FLORACULTURE',
+  'GROUP HOME',
+  'HEAVY EQUIPMENT SALES/RENTAL',
+  'HEAVY MANUFACTURING',
+  'HOTELS',
+  'HUD PROJ #202',
+  'HUD PROJ #207/223',
+  'HUD PROJ #213',
+  'HUD PROJ #221',
+  'HUD PROJ #232',
+  'HUD PROJ #236',
+  'INCOME PRODUCING PARKING LOT',
+  'INDEPENDENT LIVING (SENIORS)',
+  'INDUSTRIAL TRUCK TERM',
+  'INDUSTRIAL/UTILITY',
+  'LIGHT MANUFACTURING',
+  'LIVESTOCK O/T D & P-CAUV',
+  'LODGE HALL/AMUSEMENT PARK',
+  'MARINA',
+  'MARINE SERV FACILITY',
+  'MEDICAL CLINICS/OFFICES',
+  'MEDIUM MANUFACTURING',
+  'MINES AND QUARRIES',
+  'MINI WAREHOUSE',
+  'MOBILE HOME',
+  'MOBILE HOME (IN PARK)',
+  'MOBILE HOMES/TRAILER PKS',
+  'MOTEL & TOURIST CABINS',
+  'MUNICIPAL GOVERNMENT',
+  'MUNICIPAL IMPROVEMENT',
+  'MUNICIPAL URBAN RENEWAL',
+  'NEIGH SHOP CENTER',
+  'NURSING HOME/PRIVATE HOS',
+  'OFFICE - 1-2 STORIES',
+  'OFFICE-ELEVATOR -3 + STORIES',
+  'OFFICE-WALKUP -3 + STORIES',
+  'OFFICE/APARTMENTS OVER',
+  'OFFICE/RETAIL OVER',
+  'OFFICE/STORAGE OVER',
+  'OFFICE/WAREHOUSE',
+  'OTHER',
+  'OTHER AGRICULTURAL - CAUV',
+  'OTHER COMMERCIAL',
+  'OTHER COMMERCIAL HOUSING',
+  'OTHER FOOD SERVICE',
+  'OTHER RESIDENTIAL STRUCTURE',
+  'OTHER RETAIL STRUCTURES',
+  'OWNED BY BOARD OF EDUCATION',
+  'OWNED BY COLLEGE/UNIV/ACADEMY',
+  'OWNED BY METRO HOUSING AU',
+  'P.P. - P.U. - OTHER THAN R.R.',
+  'PARKING GARAGE/LOTS',
+  'PHARMACY (CHAIN)',
+  'PUBLIC PARK',
+  'R.R. - NOT USED IN OPERATION',
+  'R.R. - USED IN OPERATION',
+  'RECYCLING/SCRAP YARDS',
+  'REGIONAL SHOPPING CENTER',
+  'RES AUX BUILDING (NO HOUSE)',
+  'RESIDENTIAL VACANT LAND',
+  'RESTAURANT, CAFET AND/OR BAR',
+  'RETENTION POND - RESIDENTIAL',
+  'RETL/APT\'S OVER',
+  'RETL/OFF OVER',
+  'RETL/STOR OVER',
+  'RIGHT OF WAY - COMMERCIAL',
+  'RIGHT OF WAY - RESIDENTIAL',
+  'ROWHOUSE',
+  'RR-PP - USED IN OPERATION',
+  'SAVINGS AND LOANS',
+  'SINGLE FAMILY',
+  'SMALL DETACHED RET(UNDER 10000)',
+  'SMALL SHOP',
+  'STATE GOVERNMENT',
+  'SUPERMARKETS',
+  'THEATER',
+  'THREE FAMILY',
+  'TOTAL/MAJOR FIRE DAMAGE - COMM',
+  'TOWNHOUSE',
+  'TOWNSHIP GOVERNMENT',
+  'TWO FAMILY',
+  'UNLOCATED PARCEL',
+  'VACANT COMMERCIAL LAND',
+  'VACANT INDUSTRIAL LAND',
+  'VACANT LAND',
+  'WAREHOUSE',
+  'WAREHOUSE/MULTI-TENANT'
+] as const;
+
+export type PropertyType = typeof PROPERTY_TYPES[number];
